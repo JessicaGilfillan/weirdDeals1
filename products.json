@@ -1,7 +1,4 @@
-{
-  "companyName": "Weird Deals",
-  "headOffice": "Barrie, Ontario",
-  "topDeals": [
+ [
     {
       "name": "Bacon Scented Mustache",
       "price": 4.07,
@@ -33,4 +30,3 @@
       "image": "dancing-with-cats.jpg"
     }
   ]
-}
