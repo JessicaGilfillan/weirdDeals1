@@ -2,19 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js" async></script>
-    <title>COMP2112 - Lab 5 - Solution</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON Test</title>
 </head>
 <body>
-    <header>
-        <h1> Weird Deals</h1>
-        <p> Your Go To Store for Weird Things </p>
-    </header>
-
-    <main>
-        <button>See Weird Deals</button>
-    </main>
+    <div id="myData"></div>
+    <script>
+        fetch('https://jessicagilfillan.github.io/weirdDeals1/people.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+            var mainContainer = document.getElementById("myData");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+                mainContainer.appendChild(div);
+            }
+        }
+    </script>
 </body>
 </html>
